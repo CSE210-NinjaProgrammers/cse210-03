@@ -30,10 +30,10 @@ root                    (project root folder)
 * Python 3.8.0
 
 ## Authors
-* 
-* 
-*
-*
-*
+Alfred Kamisesse   (reeves.kamisese@gmail.com)
+Eric Farley        (ericfarley96@gmail.com)
+Juan David Estrada (jdemachado1105@gmail.com)
+Livia Pimentel     (livia_macedo89@yahoo.com.br)
+Tulio Banegas      (trbanegas14@gmail.com)
 
 ## Contributes
