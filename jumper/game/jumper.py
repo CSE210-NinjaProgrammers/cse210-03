@@ -41,6 +41,7 @@ class Jumper:
         """
         while self._is_playing == True:
             self._display_outputs()
+            self._get_input()
             self._do_updates()
         
         self._display_outputs()
@@ -97,9 +98,6 @@ class Jumper:
 
         self._drawing.display_dashes(self._words.get_number_of_lines())
         self._drawing.draw_parachute(self._player.get_players_turn())
-
-        if self._is_playing == True:
-            self._get_input()
         
         if self._player.get_players_turn() == 4:
             print("Sorry you lost the game :(")
