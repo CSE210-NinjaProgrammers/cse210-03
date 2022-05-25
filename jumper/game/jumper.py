@@ -12,6 +12,8 @@ class Jumper:
     -_player
     -_words
     -_drawing
+    -_shows_output
+    -_wins
 
     """
 
