@@ -1,3 +1,4 @@
+import urllib
 import random
 
 class Words:
@@ -19,13 +20,25 @@ class Words:
 
         """ 
 
-        self._word_list = ['football', 'basketball', 'husband', 'wife', 'chimney', 'chemical', 'pizza', 'hamburger', 'barbecue', 'teacher', 'school', 'commandments'] #Put the Eric Idea
+        self.__word_list = [] 
+        self.__get_random_words()
         self._current_word = random.choice(self._word_list)
         self._used_letter_list = []
         self._lines
         self._numbers_of_lines 
 
     
+    def __get_random_words(self):
+        word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
+        content = urllib.request.urlopen(word_site).read().decode('UTF-8')
+        words = content.splitlines()
+        self.__set_current_word(words)
+        ### Initial guessed word
+        # self.__set_guessed_word()
+    
+
+    def __set_current_word(self, words):
+        self.__word_list = random.choice(words)
 
     def get_current_word(self):
         """
