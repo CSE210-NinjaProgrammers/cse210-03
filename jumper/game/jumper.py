@@ -1,3 +1,6 @@
+from game.words import Words
+
+
 class Jumper:
     """
     Responsibility: The game flow. Relating the rest of the entities (players, word list and puzzle).
@@ -17,17 +20,18 @@ class Jumper:
             self (Jumper): an instance of Jumper.?
         """
 
-        self._is_playing  
-        self._player
-        self._words
-        self._drawing 
+        self._is_playing = True
+        self._player = True
+        self._words = Words()
+        self._drawing  = True
 
     def start_game(self):
         """
 
         Args:
         """
-        pass
+        self._words.word_list
+        print(self._words.word_list)
 
     def _get_input(self):
         """
