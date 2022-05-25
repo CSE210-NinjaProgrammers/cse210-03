@@ -46,11 +46,11 @@ class Jumper:
         print(self._words.word_list)
 
     def _get_input(self):
-        """
+        """Show questionto the user to guess the correct letter for the secret word.
 
         Args:
         """
-        pass
+        self._player.letter_input("\nEnter a letter from A-Z")
 
     def _do_updates(self):
         """
