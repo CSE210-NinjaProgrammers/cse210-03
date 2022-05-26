@@ -61,7 +61,7 @@ class Jumper:
         Args:
             self (Jumper): An instance of Jumper.
         """
-        while (self._player.get_typed_letter().lower() in self._words.get_used_letter_list() or not self._player.get_typed_letter().isalpha()):
+        while (self._player.get_typed_letter().lower() in self._words.get_used_letter_list() or not self._player.get_typed_letter().isalpha() or len(self._player.get_typed_letter().lower())>1):
             print("The typed letter you have already used or it is not a letter from a-z, Please type again!")
             self._get_input()
 
