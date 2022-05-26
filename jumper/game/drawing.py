@@ -11,7 +11,7 @@ class Drawing:
             self._image -> It contains the list of drawings of the game's parachute according to the number of failed letters.
             self._dashes -> Stores the underscores as well as the letters that are found in the game
         """
-        self._image = ['''
+        self.__image = ['''
                   _____
                  /_____\\
                  \     /
@@ -64,7 +64,7 @@ class Drawing:
                         '''
                             ]
 
-        self._dashes = []  
+        self.__dashes = []  
            
     def draw_parachute(self, value):
         """draw game parachute
@@ -74,7 +74,7 @@ class Drawing:
             value: Stores the index that indicates the drawing that will show according to the available turn
          
         """
-        print(self._image[value])
+        print(self.__image[value])
 
     def set_dashes(self, len_letters):
         """Stores the first list of underscores on the first turn.
@@ -85,7 +85,7 @@ class Drawing:
          
         """
         for i in range(0,len_letters):
-         self._dashes.append('_') 
+         self.__dashes.append('_') 
     
     def get_dashes(self):
         """Get the list of lines that will be displayed to guess the secret word.
@@ -95,7 +95,7 @@ class Drawing:
         
         """
         
-        return self._dashes
+        return self.__dashes
     
     def display_dashes(self, len_letters):
         """Shows the list containing the underscores and the guessed letters.
@@ -117,7 +117,7 @@ class Drawing:
             index: Stores the index of the list to be updated
             new_value: Stores the new value to be updated in the list
         """
-        self._dashes[index] = new_value
+        self.__dashes[index] = new_value
 
 
 

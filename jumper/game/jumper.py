@@ -25,12 +25,12 @@ class Jumper:
         self._first_time -> Indicates if it is the first output to show on the game console
         self._winner -> Indicates if the player is a winner or not
         """
-        self._player = Player()
-        self._is_playing = True
-        self._words = Words()
-        self._drawing = Drawing()
-        self._first_time = True
-        self._winner = False
+        self.__player = Player()
+        self.__is_playing = True
+        self.__words = Words()
+        self.__drawing = Drawing()
+        self.__first_time = True
+        self.__winner = False
         
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -39,70 +39,69 @@ class Jumper:
             self (Jumper): an instance of Jumper.
              while self._is_playing:
         """
-        while self._is_playing == True:
-            self._display_outputs()
-            self._get_input()
-            self._do_updates()
+        while self.__is_playing == True:
+            self.__display_outputs()
+            self.__get_input()
+            self.__do_updates()
         
-        self._display_outputs()
+        self.__display_outputs()
 
         
-    def _get_input(self):
+    def __get_input(self):
         """Show in the console the question addressed to the user to guess the secret word
 
         Args:
             self (Jumper): An instance of Jumper.
         """
-        self._player.type_letter("Guess a letter [a-z]: ")
+        self.__player.type_letter("Guess a letter [a-z]: ")
 
-    def _do_updates(self):
+    def __do_updates(self):
         """Perform game validations and updates
 
         Args:
             self (Jumper): An instance of Jumper.
         """
-        while (self._player.get_typed_letter().lower() in self._words.get_used_letter_list() or not self._player.get_typed_letter().isalpha() or len(self._player.get_typed_letter().lower())>1):
+        while (self.__player.get_typed_letter().lower() in self.__words.get_used_letter_list() or not self.__player.get_typed_letter().isalpha() or len(self.__player.get_typed_letter().lower())>1):
             print("The typed letter you have already used or it is not a letter from a-z, Please type again!")
-            self._get_input()
+            self.__get_input()
 
-        if self._player.get_typed_letter().lower() in self._words.get_current_word():
-            for index in range(0,self._words.get_number_of_lines()):
-                if self._words.get_current_word_list()[index] == self._player.get_typed_letter().lower():
-                    self._drawing.update_dashes_list(index,self._player.get_typed_letter().lower())
+        if self.__player.get_typed_letter().lower() in self.__words.get_current_word():
+            for index in range(0,self.__words.get_number_of_lines()):
+                if self.__words.get_current_word_list()[index] == self.__player.get_typed_letter().lower():
+                    self.__drawing.update_dashes_list(index,self.__player.get_typed_letter().lower())
 
-            if self._drawing.get_dashes() == self._words.get_current_word_list():
-                self._is_playing = False
-                self._winner = True
+            if self.__drawing.get_dashes() == self.__words.get_current_word_list():
+                self.__is_playing = False
+                self.__winner = True
         else:
-            self._player.set_players_turn(1)
-            if self._player.get_players_turn() == 4:
-                self._is_playing = False
+            self.__player.set_players_turn(1)
+            if self.__player.get_players_turn() == 4:
+                self.__is_playing = False
 
-        self._words.set_used_letter_list(self._player.get_typed_letter().lower())
+        self.__words.set_used_letter_list(self.__player.get_typed_letter().lower())
         
-    def _display_outputs(self):
+    def __display_outputs(self):
         """Shows the outputs of the game.
 
         Args:
             self (Jumper): An instance of Jumper.
         """
-        if self._first_time == True:
-            self._words.random_word()
-            self._drawing.set_dashes(self._words.get_number_of_lines())
-            self._first_time = False
+        if self.__first_time == True:
+            self.__drawing.set_dashes(self.__words.get_number_of_lines())
+            self.__first_time = False
         else:
             print("\nRecently used letters: ", end=" ")
-            for letter in self._words.get_used_letter_list():
+            for letter in self.__words.get_used_letter_list():
              print(f'{letter}',end=",")
             print()
 
-        self._drawing.display_dashes(self._words.get_number_of_lines())
-        self._drawing.draw_parachute(self._player.get_players_turn())
+        self.__drawing.display_dashes(self.__words.get_number_of_lines())
+        self.__drawing.draw_parachute(self.__player.get_players_turn())
         
-        if self._player.get_players_turn() == 4:
-            print("Sorry you lost the game :(")
+        if self.__player.get_players_turn() == 4:
+            print(f"Sorry you lost the game, the word was: {self.__words.get_current_word()}")
         
-        if self._winner == True:
+        if self.__winner == True:
             print("Congratulations, you've guessed the secret word!")
         
 

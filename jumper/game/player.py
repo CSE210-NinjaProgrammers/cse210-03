@@ -19,8 +19,8 @@ class Player:
         self._typed_letter -> Stores the letter that the player types
         self._players_turn -> Stores the count of the player's available turns up to 5 turns.
         """
-        self._typed_letter = ""
-        self._players_turn = 0
+        self.__typed_letter = ""
+        self.__players_turn = 0
         
     def type_letter(self, prompt):
         """Type the letter the players enters
@@ -30,7 +30,7 @@ class Player:
           prompt : Text to display in the console
            
         """
-        self._typed_letter = input(prompt)
+        self.__typed_letter = input(prompt)
         
     def get_typed_letter(self):
         """ Gets the letter typed by the user
@@ -38,7 +38,7 @@ class Player:
         Args:
             self (Player): An instance of Player.
         """
-        return self._typed_letter
+        return self.__typed_letter
     
     def get_players_turn(self):
         """ Gets the turns used by the player.
@@ -46,7 +46,7 @@ class Player:
         Args:
             self (Player): An instance of Player.
         """
-        return self._players_turn
+        return self.__players_turn
     
     def set_players_turn(self, next_turn):
         """ Update turns used
@@ -56,4 +56,4 @@ class Player:
             next_turn: Contains the number that will be used to update the count of turns used.
         """
         
-        self._players_turn += next_turn
+        self.__players_turn += next_turn
