@@ -30,10 +30,16 @@ root                    (project root folder)
 * Python 3.8.0
 
 ## Authors
-Alfred Kamisesse   (reeves.kamisese@gmail.com)
+Alfred Kamisese    (reeves.kamisese@gmail.com)
 Eric Farley        (ericfarley96@gmail.com)
 Juan David Estrada (jdemachado1105@gmail.com)
 Livia Pimentel     (livia_macedo89@yahoo.com.br)
 Tulio Banegas      (trbanegas14@gmail.com)
 
 ## Contributes
+
+Alfred Kamisese    -> Type README file and change attributes the jumper class
+Eric Farley        -> Provide the function to get the words from URL
+Juan David Estrada -> Provide ideas for words class
+Livia Pimentel     -> Did the classes structure and provide class ideas
+Tulio Banegas      -> Did comments and do_updates method inside jumper class
