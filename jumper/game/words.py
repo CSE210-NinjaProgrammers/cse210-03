@@ -24,7 +24,7 @@ class Words:
         self._number_of_lines -> Stores the number of letters that contains the secret word
         """
         self._word_list = [ "mexico", "colombia", "canada", "venezuela", "uruguay", "argentina","guatemala", 
-        "panama", "ecuador","USA","brasil","honduras"]
+        "panama", "ecuador","usa","brasil","honduras"]
 
         self._current_word = ""
         self._used_letter_list = []
