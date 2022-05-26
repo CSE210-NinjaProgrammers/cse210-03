@@ -8,7 +8,6 @@ class Jumper:
     The responsibility of a Jumper is the game flow. Relating the rest of the entities (players, word list and puzzle)
 
     Attributes:
-     
     """
 
     def __init__(self):
@@ -53,7 +52,9 @@ class Jumper:
         Args:
             self (Jumper): An instance of Jumper.
         """
+
         self.__player.type_letter("Guess a letter [a-z]: ")
+
 
     def __do_updates(self):
         """Perform game validations and updates

@@ -1,3 +1,4 @@
+
 import random
 import urllib.request
 
@@ -15,6 +16,7 @@ class Words:
         """Constructs a new Words.
 
         Args:
+
             self (Words): An instance of Words.
         
         Attributes:
@@ -40,8 +42,10 @@ class Words:
         content = urllib.request.urlopen(word_site).read().decode('UTF-8')
         words = content.splitlines()
         self.__set_current_word(words)
+
     
     def __set_current_word(self, words):
+
         """Store a secret word in a current_word attribute and save letters in _current_word_list
         
         Args:
